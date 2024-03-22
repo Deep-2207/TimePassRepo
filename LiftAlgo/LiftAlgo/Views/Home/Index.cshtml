@@ -1,0 +1,248 @@
+﻿@model LiftViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}<style>
+     .Active-border {
+         border: 3px solid red !important;
+     }
+
+     .Current-lift-border {
+         border: 3px solid Orange !important;
+     }
+
+     .Idel-border {
+         border: 3px solid yellow;
+     }
+
+
+     .Normal-border {
+         border: 3px solid gray;
+     }
+
+     /* .arrow{
+                                                           display:contents;
+                                                       } */
+</style>
+
+
+<form asp-controller="home" asp-action="liftChange" method="post">
+    <div class="container col-md-12 row d-flex justify-content-around">
+        <div class="col">
+            <h3 class="text-center">Lift 1</h3>
+            <div class="Floor-container row d-flex justify-content-around">
+                <div class="card  Normal-border pt-1 mt-3 lift-1-1 row @(Model.FirstLiftCurrentFloor == 1 ? "Active-border" : "")" style="width: 10rem;">
+                    <div class="card-body">
+                        <h3>Floor 1</h3>
+                    </div>
+                </div>
+                <div class="arrow d-flex align-items-center col-6">
+                    <div class="UpperSide-arrow d-flex m-3">
+                        <img src="https://api.iconify.design/majesticons:arrow-up.svg" height="30" onclick="btnUpper(1)" />
+                    </div>
+                    <div class="LowerSide-arrow d-flex">
+                        <img src="https://api.iconify.design/material-symbols:arrow-downward.svg" height="30" onclick="btnUpper(1)" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="Floor-container row d-flex justify-content-around">
+                <div class="card  Normal-border pt-1 mt-3 lift-1-2 row" style="width: 10rem;">
+                    <div class="card-body">
+                        <h3>Floor 2</h3>
+                    </div>
+                </div>
+                <div class="arrow d-flex align-items-center col-6">
+                    <div class="UpperSide-arrow d-flex m-3">
+                        <img src="https://api.iconify.design/majesticons:arrow-up.svg" height="30px" onclick="btnUpper(2)" />
+                    </div>
+                    <div class="LowerSide-arrow d-flex">
+                        <img src="https://api.iconify.design/material-symbols:arrow-downward.svg" height="30px" onclick="btnUpper(2)" />
+                    </div>
+                </div>
+            </div>
+            <div class="Floor-container row d-flex justify-content-around">
+                <div class="card  Normal-border pt-1 mt-3 lift-1-3 row" style="width: 10rem;">
+                    <div class="card-body">
+                        <h3>Floor 3</h3>
+                    </div>
+                </div>
+                <div class="arrow d-flex align-items-center col-6">
+                    <div class="UpperSide-arrow d-flex m-3">
+                        <img src="https://api.iconify.design/majesticons:arrow-up.svg" height="30px" onclick="btnUpper(3)" />
+                    </div>
+                    <div class="LowerSide-arrow d-flex">
+                        <img src="https://api.iconify.design/material-symbols:arrow-downward.svg" height="30px" onclick="btnUpper(3)" />
+                    </div>
+                </div>
+            </div>
+            <div class="Floor-container row d-flex justify-content-around">
+                <div class="card  Normal-border pt-1 mt-3 lift-1-4 row" style="width: 10rem;">
+                    <div class="card-body">
+                        <h3>Floor 4</h3>
+                    </div>
+                </div>
+                <div class="arrow d-flex align-items-center col-6">
+                    <div class="UpperSide-arrow d-flex m-3">
+                        <img src="https://api.iconify.design/majesticons:arrow-up.svg" height="30px" onclick="btnUpper(4)" />
+                    </div>
+                    <div class="LowerSide-arrow d-flex">
+                        <img src="https://api.iconify.design/material-symbols:arrow-downward.svg" height="30px" onclick="btnUpper(4)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h3 class="text-center">Lift 2</h3>
+            <div class="Floor-container row d-flex justify-content-around">
+                <div class="card  Normal-border pt-1 mt-3 row lift-2-1" style="width: 10rem;">
+                    <div class="card-body">
+                        <h3>Floor 1</h3>
+                    </div>
+                </div>
+                <div class="arrow d-flex align-items-center col-6">
+                    <div class="UpperSide-arrow d-flex m-3">
+                        <img src="https://api.iconify.design/majesticons:arrow-up.svg" height="30px" onclick="btnUpper(1)" />
+                    </div>
+                    <div class="LowerSide-arrow d-flex">
+                        <img src="https://api.iconify.design/material-symbols:arrow-downward.svg" height="30px" onclick="btnUpper(1)" />
+                    </div>
+                </div>
+            </div>
+            <div class="Floor-container row d-flex justify-content-around">
+                <div class="card  Normal-border pt-1 mt-3 row lift-2-2 @(Model.FirstLiftCurrentFloor == 1 ? "Active-border" : "")" style="width: 10rem;">
+                    <div class="card-body">
+                        <h3>Floor 2</h3>
+                    </div>
+                </div>
+                <div class="arrow d-flex align-items-center col-6">
+                    <div class="UpperSide-arrow d-flex m-3">
+                        <img src="https://api.iconify.design/majesticons:arrow-up.svg" height="30px" onclick="btnUpper(2)" />
+                    </div>
+                    <div class="LowerSide-arrow d-flex">
+                        <img src="https://api.iconify.design/material-symbols:arrow-downward.svg" height="30px" onclick="btnUpper(2)" />
+                    </div>
+                </div>
+            </div>
+            <div class="Floor-container row d-flex justify-content-around">
+                <div class="card  Normal-border pt-1 mt-3 row lift-2-3" style="width: 10rem;">
+                    <div class="card-body">
+                        <h3>Floor 3</h3>
+                    </div>
+                </div>
+                <div class="arrow d-flex align-items-center col-6">
+                    <div class="UpperSide-arrow d-flex m-3">
+                        <img src="https://api.iconify.design/majesticons:arrow-up.svg" height="30px" onclick="btnUpper(3)" />
+                    </div>
+                    <div class="LowerSide-arrow d-flex">
+                        <img src="https://api.iconify.design/material-symbols:arrow-downward.svg" height="30px" onclick="btnUpper(3)" />
+                    </div>
+                </div>
+            </div>
+            <div class="Floor-container row d-flex justify-content-around">
+                <div class="card  Normal-border pt-1 mt-3 row lift-2-3" style="width: 10rem;">
+                    <div class="card-body">
+                        <h3>Floor 4</h3>
+                    </div>
+                </div>
+                <div class="arrow d-flex align-items-center col-6">
+                    <div class="UpperSide-arrow d-flex m-3">
+                        <img src="https://api.iconify.design/majesticons:arrow-up.svg" height="30px" onclick="btnUpper(4)" />
+                    </div>
+                    <div class="LowerSide-arrow d-flex">
+                        <img src="https://api.iconify.design/material-symbols:arrow-downward.svg" height="30px" onclick="btnUpper(4)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script type="text/javascript">
+
+    var firstLiftCurrentindex = 1;
+    var currentIndex = firstLiftCurrentindex;
+
+    function btnUpper(floor) {
+        console.log(floor);
+
+        // while (floor >= currentIndex) {
+        //     //setTimeout($(".lift-" + currentIndex).addClass('Active-border'), 10000);
+        //     $(".lift-" + currentIndex).addClass('Active-border').slideUp(300).delay(8000).fadeIn(400);
+        //     currentIndex++;
+        // }
+
+        if (floor > currentIndex) {
+            console.log("Lift Upper jase");
+            var startInterval = setInterval(function () {
+
+                $(".lift-1-" + currentIndex).removeClass('Active-border');
+
+                $(".lift-1-" + currentIndex).addClass('Current-lift-border');
+                $(".lift-1-" + (currentIndex - 1)).removeClass('Current-lift-border');
+
+                if (currentIndex == floor) {
+                    $(".lift-1-" + currentIndex).removeClass('Current-lift-border');
+                    $(".lift-1-" + currentIndex).addClass('Active-border');
+                    currentIndex = floor;
+                    clearInterval(startInterval);
+                }
+                else {
+                    currentIndex++;
+                }
+                console.log(currentIndex);
+            }, 3000);
+            console.log("Reached");
+        }
+        else {
+            console.log("Lift Niche jase");
+            var startInterval = setInterval(function () {
+
+                $(".lift-1-" + currentIndex).removeClass('Active-border');
+
+                $(".lift-1-" + currentIndex).addClass('Current-lift-border');
+                $(".lift-1-" + (currentIndex + 1)).removeClass('Current-lift-border');
+
+                if (currentIndex == floor) {
+                    $(".lift-1-" + currentIndex).removeClass('Current-lift-border');
+                    $(".lift-1-" + currentIndex).addClass('Active-border');
+                    currentIndex = floor;
+                    clearInterval(startInterval);
+                }
+                else {
+                    currentIndex--;
+                }
+                console.log(currentIndex);
+            }, 3000);
+        }
+
+
+        
+
+
+        // jQuery.ajax({
+        //     type: "post",
+        //     dataType: "json",
+        //     url: "Home/UpperCall",
+        //     data: { floorNumber: floor },
+        //     success: function (data) {
+
+        //     }
+        // });
+
+    }
+
+    // function btnUpper(floor) {
+    //     console.log(floor);
+    //     jQuery.ajax({
+    //         type: "post",
+    //         dataType: "json",
+    //         url: "Home/LowerCall",
+    //         data: { floorNumber: floor },
+    //         success: function (data) {
+    //             successmessage = 'Data was succesfully captured';
+    //         }
+    //     });
+    // }
+
+
+
+</script>
